@@ -1,0 +1,25 @@
+#############################################
+# Syntax Coloring Map for HeadlightController
+#############################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+HeadlightController	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setupHeadlight	KEYWORD2
+setupButton	KEYWORD2
+setupWebControl	KEYWORD2
+currentPositionInPercent	KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+

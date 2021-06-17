@@ -1,0 +1,18 @@
+{
+  "name": "HeadlightController",
+  "keywords": "Chỉnh đèn, chỉnh điện, nhớ, lưu trạng thái",
+  "description": "Điều khiển động cơ chỉnh đèn, có nhớ hai trạng thái.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trantuananh1996/HeadlightController.git"
+  },
+  "version": "0.1.0",
+  "authors": {
+    "name": "Trần Anh",
+    "url": ""
+  },
+  "exclude": [
+  ],
+  "frameworks": "arduino",
+  "platforms": "*"
+}
