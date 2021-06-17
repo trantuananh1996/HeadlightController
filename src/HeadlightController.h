@@ -46,7 +46,7 @@ public:
         hasButton = true;
     }
 
-    void setupWebControl(AsyncWebServer server) {
+    void setupWebControl(AsyncWebServer *server) {
         internalServerSetup(server);
     }
 
@@ -278,15 +278,15 @@ private:
         return String();
     }
 
-    void internalServerSetup(AsyncWebServer server) {
-        server.on("/headlight-controller", HTTP_GET, [&](AsyncWebServerRequest *request) {
+    void internalServerSetup(AsyncWebServer *server) {
+        server->on("/headlight-controller", HTTP_GET, [&](AsyncWebServerRequest *request) {
             request->send_P(200, "text/html", webControlHtml, [&](String s) {
                 return paramProcessor(s);
             });
 
         });
 
-        server.on("/adjust-headlight", HTTP_GET, [&](AsyncWebServerRequest *request) {
+        server->on("/adjust-headlight", HTTP_GET, [&](AsyncWebServerRequest *request) {
             String inputMessage;
             if (request->hasParam("value")) {
                 inputMessage = request->getParam("value")->value();
@@ -297,7 +297,7 @@ private:
             request->send(200, "text/plain", "OK");
         });
 
-        server.on("/save-top", HTTP_GET, [&](AsyncWebServerRequest *request) {
+        server->on("/save-top", HTTP_GET, [&](AsyncWebServerRequest *request) {
             String inputMessage;
             if (request->hasParam("value")) {
                 inputMessage = request->getParam("value")->value();
@@ -307,7 +307,7 @@ private:
             request->send(200, "text/plain", "OK");
         });
 
-        server.on("/save-bottom", HTTP_GET, [&](AsyncWebServerRequest *request) {
+        server->on("/save-bottom", HTTP_GET, [&](AsyncWebServerRequest *request) {
             String inputMessage;
             if (request->hasParam("value")) {
                 inputMessage = request->getParam("value")->value();
@@ -316,18 +316,18 @@ private:
             }
             request->send(200, "text/plain", "OK");
         });
-        server.on("/fast-top", HTTP_GET, [&](AsyncWebServerRequest *request) {
+        server->on("/fast-top", HTTP_GET, [&](AsyncWebServerRequest *request) {
             targetPosition = topPosition;
             adjustToTargetPosition(currentPosition);
             request->send(200, "text/plain", "OK");
         });
-        server.on("/fast-bottom", HTTP_GET, [&](AsyncWebServerRequest *request) {
+        server->on("/fast-bottom", HTTP_GET, [&](AsyncWebServerRequest *request) {
             targetPosition = botPosition;
             adjustToTargetPosition(currentPosition);
             request->send(200, "text/plain", "OK");
         });
 
-        server.on("/currentPosition", HTTP_GET, [&](AsyncWebServerRequest *request) {
+        server->on("/currentPosition", HTTP_GET, [&](AsyncWebServerRequest *request) {
             request->send(200, "text/plane", String(currentPosition));
         });
     }
