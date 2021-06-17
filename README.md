@@ -63,6 +63,16 @@ External library
 * **[AsyncElegantOTA](https://github.com/ayushsharma82/AsyncElegantOTA)** - A great library for firmware update.
 
 
+Schematics
+--------------
+* **Schematics**
+![HeadlightController](images/schematics.png)
+
+
+* **Motor board**
+![HeadlightController](images/motor_boards.jpg)
+
+
 Version History
 ---------------
 
