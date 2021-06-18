@@ -38,7 +38,7 @@ HeadlightController.setupHeadlight(headlightActivePin, headlightReversePin, head
 //Enable physical button control
 HeadlightController.setupButton(headlightUpButtonPin, headlightDownButtonPin);
 //Enable web control
-HeadlightController.setupWebControl(server);
+HeadlightController.setupWebControl(&server);
 
 ``` 
 
